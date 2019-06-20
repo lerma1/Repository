@@ -1,0 +1,41 @@
+.page-header {
+  position: fixed;
+
+  height: 75px;
+  left: 10px; right: 20px; top: 0px;
+  font-family: 'PT Sans Caption', sans-serif; font-size: 18px; font-weight: bold;
+  background: #FFFFFF;
+  z-index: 100;
+}
+
+.page-header-menu{
+  display: inline-block;
+  height: 65px;
+
+}
+.page-header-user{
+    display: inline-block;
+    height: 65px;
+    float: right;
+    margin-right: 10px;
+}
+.page-header__icon{
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.page-header-menu__title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.page-header-user:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}

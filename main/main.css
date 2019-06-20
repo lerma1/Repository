@@ -1,0 +1,8 @@
+.main {
+  position: absolute;
+  left: 300px;
+  right: 30px;
+  top: 105px;
+  margin: auto;
+  font-family: 'PT Sans Caption', sans-serif; font-size: 18px;  font-weight: bold;
+}

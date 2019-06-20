@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>ToDoList</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|PT+Sans+Caption:400,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+  <link href="page-header/page-header.css" rel="stylesheet">
+  <link href="sidebar/sidebar.css" rel="stylesheet">
+  <link href="main/main.css" rel="stylesheet">
+  <link href="main/new-note.css" rel="stylesheet">
+  <link href="main/tooltip.css" rel="stylesheet">
+  <link href="main/note-list.css" rel="stylesheet">
+
+
+
+</head>
+<header>
+  <div class="page-header">
+      <div class="page-header-menu">
+          <img class = "page-header__icon page-header-menu__menu-button" src="icon/menu.png" data-tooltip = "Главное меню">
+          <img class = "page-header__icon page-header-menu__logo"src="icon/icon.png" alt="">
+          <h2 class = "page-header-menu__title">Мои заметки</h2>
+      </div>
+      <div class="page-header-user">
+          <img class = "page-header__icon page-header-user__settings-button" src="icon/settings.png" data-tooltip = "Настройки">
+          <img class = "page-header__icon page-header-user__user-button"src="icon/user.png">
+      </div>
+      <hr>
+  </div>
+
+</header>
+
+<body>
+  <div class="sidebar">
+      <div class="sidebar-section">
+          <div class = "sidebar-section__item sidebar-section__item-selected">
+              <img class = "sidebar-section__item_icon" src="icon/notes.png" alt="">
+              <span>Заметки</span>
+          </div>
+          <div class = "sidebar-section__item">
+              <img class = "sidebar-section__item_icon" src="icon/reminders.png" alt="">
+              <span>Напоминания</span>
+          </div>
+          <hr>
+      </div>
+      <div class = "sidebar-section__item">
+          <img class = "sidebar-section__item_icon" src="icon/icon.png" alt="">
+          <span>Ярлыки</span>
+      </div>
+      <div class="sidebar-section">
+          <div class = "sidebar-section__item">
+              <img class = "sidebar-section__item_icon" src="icon/archive.png" alt="">
+              <span>Архив</span>
+          </div>
+          <div class = "sidebar-section__item">
+              <img class = "sidebar-section__item_icon" src="icon/trash-can.png" alt="">
+              <span>Корзина</span>
+          </div>
+        </div>
+  </div>
+
+
+
+  <div id = "main" class="main">
+
+  </div>
+
+
+<script src="main/buffer.js"></script>
+<script src="main/tooltip.js"></script>
+<script src="note.js"></script>
+<script src="main/new-note.js"></script>
+<script src="main/b-note.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
