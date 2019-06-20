@@ -59,7 +59,7 @@ function NewNote(options) { //конструктор компонента newNot
   function renderOpenNewNote() {
     var textareaElem = document.createElement('textarea');
     elem.appendChild(textareaElem);
-    textareaElem.className = "new-note__input-text";
+    textareaElem.className = "new-note__input_text";
     textareaElem.setAttribute("type", "text");
     textareaElem.setAttribute("placeholder", "Текст заметки...");
     textareaElem.setAttribute("rows", "4");
