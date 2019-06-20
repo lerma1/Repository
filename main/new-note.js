@@ -2,7 +2,7 @@
 
 function NewNote(options) { //конструктор компонента newNote
   var elem;
-  var note = new Note();
+this.note = new Note();
   var buffer = new Buffer();
 
   function getElem() {
@@ -147,10 +147,10 @@ function NewNote(options) { //конструктор компонента newNot
   };
 
   function changeNote(target){
-    var header = elem.querySelector('.new-note__input');
+    var header = elem.querySelector('.new-note__input'); //////тут нужно текст вычленять!
     var text = elem.querySelector('.new-note__input-text');
     buffer.addToBuffer([header,text]);
-    this.note.addText(header, text);
+    this.note.updateText(header, text);
 
     //событие срабатывает при опен объекта
     //назначаеться обработчик события инпут на оба инпута. или их назначить сразу???

@@ -1,6 +1,6 @@
 
 
-function note(options){ //конструктор объекта Задача
+function Note(options){ //конструктор объекта Задача
   this.header = options.header||"";
   this.text = options.text||"";
   this.date = options.date||"";
@@ -11,10 +11,11 @@ function note(options){ //конструктор объекта Задача
 
    var elem;
 
-  function addText (header, text) {
+  function updateText (header, text) {
      this.header = header;
        this.text = text;
    }
+
 
    function showNote (){
      if(!elem) {
@@ -25,7 +26,7 @@ function note(options){ //конструктор объекта Задача
      }
    }
 
-   this.addText = addText;
+   this.updateText = updateText;
    this.showNote = showNote;
 }
 
