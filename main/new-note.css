@@ -62,7 +62,7 @@ cursor: text;
   height: 20px;
   margin-right: 20px;
   margin-left: 20px;
-  margin-bottom: 15px;
+
   vertical-align: middle;
   cursor: pointer;
 }
@@ -95,6 +95,7 @@ cursor: text;
 
 .new-note_open .new-note__menu{
   display: block;
+  height: 40px;
 }
 
 .new-note_open .new-note__icon-fasten{
@@ -107,4 +108,24 @@ display: block;
 
 .new-note_open .new-note__input_text{
   display: block;
+}
+
+.new-note__button {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  margin-left: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 5px 40px;
+  font-family: 'PT Sans Caption', sans-serif; font-size: 17px;  font-weight: bold;
+  outline:none;
+  border: 0px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background-color: inherit;
+  color: rgba(82, 80, 80, 1);
+}
+.new-note__button:hover {
+background-color: #EFEFEF;
 }

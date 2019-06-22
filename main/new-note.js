@@ -2,7 +2,7 @@
 
 function NewNote(options) { //конструктор компонента newNote
   var elem;
-this.note = new Note();
+  var note = new Note();
   var buffer = new Buffer();
 
   function getElem() {
@@ -49,6 +49,7 @@ this.note = new Note();
       if (event.target.closest('.new-note-close')) {
         toggle();
       }
+
     }
 
     elem.oninput = function(event) {
@@ -121,6 +122,12 @@ this.note = new Note();
     imgElem.setAttribute("data-tooltip", "Повторить");
     menuElem.appendChild(imgElem);
 
+    buttonElem = document.createElement('button');
+    buttonElem.className = "new-note__button";
+    buttonElem.innerHTML = "Сохранить";
+    menuElem.appendChild(buttonElem);
+
+
     elem.appendChild(menuElem);
 
   }
@@ -147,26 +154,14 @@ this.note = new Note();
   };
 
   function changeNote(target){
-    var header = elem.querySelector('.new-note__input'); //////тут нужно текст вычленять!
-    var text = elem.querySelector('.new-note__input-text');
+    var header = elem.querySelector('.new-note__input').value;
+    if(elem.querySelector('.new-note__input_text')){ var text = elem.querySelector('.new-note__input_text').value; }
+    else text = '';
+
     buffer.addToBuffer([header,text]);
-    this.note.updateText(header, text);
-
-    //событие срабатывает при опен объекта
-    //назначаеться обработчик события инпут на оба инпута. или их назначить сразу???
-    //
-    //обработчик:
-    // если нет обьекта задачи - создаеться объект новой задачи.
-    //если нет буффера - создаеться буффер
-    //значения полей записываються в обьект
-    //значения полей записываються в буффер
-    //изменяем кнопку ундо, если нужно
-
-    //когда newNote close, создаеться новая задача по объекту в дом.
+    note.header = header;
+    note.text = text;
   }
-
-  //функция - повесить обработчики на кнопки ундо и редо
-  //функция обработчик ундо { обьект = буффер ундо. меняем значения у обоих инпутов}
 
   this.getElem = getElem;
   this.toggle = toggle;
