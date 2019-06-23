@@ -2,7 +2,7 @@
 
 function NewNote(options) { //конструктор компонента newNote
   var elem;
-  var note = new Note();
+  var note = new Note({header: '', text: '', date: '21.11.23',  list:[], image: '', archive: false, fasten: false });
   var buffer = new Buffer();
 
   function getElem() {
@@ -49,6 +49,7 @@ function NewNote(options) { //конструктор компонента newNot
       if (event.target.closest('.new-note-close')) {
         toggle();
       }
+      
 
     }
 
@@ -153,6 +154,13 @@ function NewNote(options) { //конструктор компонента newNot
     else open();
   };
 
+  function createNewNote(target){   ///тут наверное надо передавать форму основную, а не от болды искать майн
+    changeNote();
+    //var mainElem = document.querySelector("#main");
+  //  mainElem.appendChild(note.getElem());
+  }
+
+
   function changeNote(target){
     var header = elem.querySelector('.new-note__input').value;
     if(elem.querySelector('.new-note__input_text')){ var text = elem.querySelector('.new-note__input_text').value; }
@@ -167,4 +175,6 @@ function NewNote(options) { //конструктор компонента newNot
   this.toggle = toggle;
   this.close = close;
   this.open = open;
+  this.note = note;
+  this.changeNote = changeNote;
 }

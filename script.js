@@ -39,4 +39,10 @@ mainElem.onclick = function(event) {
               if (!event.target.closest('.new-note')) {
                 newNote.close();
               }
+
+              if (event.target.closest('.new-note__button')) {
+                newNote.changeNote();
+                this.insertBefore(newNote.note.getElem(), document.querySelector(".note-list__note"));
+
             }
+}

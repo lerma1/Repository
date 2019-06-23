@@ -5,13 +5,16 @@ function Note(options){ //конструктор объекта Задача
   this.text = options.text||"";
   this.date = options.date||"";
   this.list = options.list||[];
-  this.image = options.image||"";
+  this.image = options.image||undefined;
   this.archive = options.archive||false;
   this.fasten = options.fasten||false;
+  alert(options);
+    alert(  this.header);
+    alert(  this.image);
 
    var elem;
 
-  function updateText (header, text) {
+  function updateText(header, text) {
      this.header = header;
        this.text = text;
    }
