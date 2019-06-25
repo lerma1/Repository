@@ -79,11 +79,6 @@ function Note(options) { //конструктор компонента Note
       return false;
     };
 
-    elem.onclick = function(event) {
-      //if (event.target.closest('.new-note-close')) {
-      //  toggle();
-    //  }
-    }
 
   }
 

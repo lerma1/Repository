@@ -2,12 +2,17 @@
 
 function NewNote(options) { //конструктор компонента newNote
   var elem;
-  var note = new Note({header: '', text: '', date: '21.11.23',  list:[], image: '', archive: false, fasten: false });
+  var note = new contentNote({header: '', text: '', date: '',  list:[], image: '', archive: false, fasten: false });
   var buffer = new Buffer();
 
   function getElem() {
     if (!elem) render();
     return elem;
+  }
+
+  function getNote() {
+
+    return note;
   }
 
 
@@ -45,13 +50,15 @@ function NewNote(options) { //конструктор компонента newNot
       //return false;
     };
 
-    elem.onclick = function(event) {
+    function handler (event) {
       if (event.target.closest('.new-note-close')) {
         toggle();
       }
-      
 
     }
+
+    elem.addEventListener("click", handler);
+
 
     elem.oninput = function(event) {
          changeNote(event.target);
@@ -169,9 +176,23 @@ function NewNote(options) { //конструктор компонента newNot
     buffer.addToBuffer([header,text]);
     note.header = header;
     note.text = text;
+
+
+  }
+
+  function clearNewNote(target){
+    elem.querySelector('.new-note__input').value = '';
+    if(elem.querySelector('.new-note__input_text')){ elem.querySelector('.new-note__input_text').value = ''; }
+
+    note.header = '';
+    note.text = '';
+
+
   }
 
   this.getElem = getElem;
+  this.clearNewNote = clearNewNote;
+  this.getNote = getNote;
   this.toggle = toggle;
   this.close = close;
   this.open = open;

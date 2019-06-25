@@ -41,8 +41,11 @@ mainElem.onclick = function(event) {
               }
 
               if (event.target.closest('.new-note__button')) {
-                newNote.changeNote();
-                this.insertBefore(newNote.note.getElem(), document.querySelector(".note-list__note"));
+                var n = newNote.getNote();
+                var NoteCurrent = new Note ({header: n.header, text: n.text, date: n.date,  list: n.list, image: n.image, archive: n.archive, fasten: n.fasten });
+                this.insertBefore(NoteCurrent.getElem(), document.querySelector(".note-list__note"));
+                newNote.clearNewNote();
+                newNote.close();
 
             }
 }

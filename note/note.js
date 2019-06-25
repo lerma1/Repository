@@ -1,6 +1,6 @@
 
 
-function Note(options){ //конструктор объекта Задача
+function contentNote(options){ //конструктор объекта Задача
   this.header = options.header||"";
   this.text = options.text||"";
   this.date = options.date||"";
@@ -8,9 +8,6 @@ function Note(options){ //конструктор объекта Задача
   this.image = options.image||undefined;
   this.archive = options.archive||false;
   this.fasten = options.fasten||false;
-  alert(options);
-    alert(  this.header);
-    alert(  this.image);
 
    var elem;
 
